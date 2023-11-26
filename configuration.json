@@ -1,1 +1,5 @@
-{"framework":"Pytorch","task":"text-generation"}
+{
+    "framework": "pytorch",
+    "task": "text-generation",
+    "allow_remote": true
+}
