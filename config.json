@@ -1,5 +1,4 @@
 {
-  "_name_or_path": "/cpfs01/data/shared/Group-m6/suyang.fy/hf-ckpts/Qwen-72B-Base/",
   "architectures": [
     "QWenLMHeadModel"
   ],
