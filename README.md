@@ -92,20 +92,20 @@ cd flash-attention && pip install .
 You can easily call the model with the following code:
 
 ```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers.generation import GenerationConfig
+from modelscope import AutoModelForCausalLM, AutoTokenizer
+from modelscope import GenerationConfig
 
 # Note: The default behavior now has injection attack prevention off.
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen-72B", trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained("qwen/Qwen-72B", trust_remote_code=True)
 
 # use bf16
-# model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen-72B", device_map="auto", trust_remote_code=True, bf16=True).eval()
+# model = AutoModelForCausalLM.from_pretrained("qwen/Qwen-72B", device_map="auto", trust_remote_code=True, bf16=True).eval()
 # use fp16
-# model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen-72B", device_map="auto", trust_remote_code=True, fp16=True).eval()
+# model = AutoModelForCausalLM.from_pretrained("qwen/Qwen-72B", device_map="auto", trust_remote_code=True, fp16=True).eval()
 # use cpu only
-# model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen-72B", device_map="cpu", trust_remote_code=True).eval()
+# model = AutoModelForCausalLM.from_pretrained("qwen/Qwen-72B", device_map="cpu", trust_remote_code=True).eval()
 # use auto mode, automatically select precision based on the device.
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen-72B", device_map="auto", trust_remote_code=True).eval()
+model = AutoModelForCausalLM.from_pretrained("qwen/Qwen-72B", device_map="auto", trust_remote_code=True).eval()
 
 # Specify hyperparameters for generation. But if you use transformers>=4.32.0, there is no need to do this.
 # model.generation_config = GenerationConfig.from_pretrained("Qwen/Qwen-72B", trust_remote_code=True)
