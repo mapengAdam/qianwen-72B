@@ -524,11 +524,7 @@ class QWenAttention(nn.Module):
                         -1, -1, causal_mask.size(2), -1
                     )
                     if causal_mask is not None:
-<<<<<<< HEAD
                         attention_mask.masked_fill_(~causal_mask, torch.finfo(query.dtype).min)
-=======
-                        attention_mask = attention_mask.masked_fill(~causal_mask, torch.finfo(query.dtype).min)
->>>>>>> 4f3c9fa45a83ed1c32f8680121087991ffcadc33
                 else:
                     attention_mask = causal_mask
                 attn_output = F.scaled_dot_product_attention(
